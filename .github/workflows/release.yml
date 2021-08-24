@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Build project
-      run: go build -o ${{ matrix.name }}
+      run: go build -o ${{ matrix.name }}.exe
       env:
         GOOS: ${{ matrix.os }}
         GOARCH: ${{ matrix.arch }}
