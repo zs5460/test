@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: show Go version
-    - run: go version
+      run: go version
       
     - name: Checkout code
       uses: actions/checkout@v2
