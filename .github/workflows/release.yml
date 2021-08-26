@@ -5,16 +5,17 @@ jobs:
 
     strategy:
       matrix:
-        name: [main-windows-amd64]
+        name: [main-windows-amd64,main-linux-amd64]
         include:
           - name: main-windows-amd64
             os: windows
             arch: amd64
 
-    runs-on: windows-2022
+    runs-on: ubuntu-latest
 
     steps:
-    - name: show Go version
+    - name: Setup Go
+      uses: actions/setup-go@v2
       run: go version
       
     - name: Checkout code
