@@ -16,13 +16,15 @@ jobs:
     steps:
     - name: Setup Go
       uses: actions/setup-go@v2
+    
+    - name: Show Go Version
       run: go version
       
     - name: Checkout code
       uses: actions/checkout@v2
       
     - name: Build project
-      run: go build -o ${{ matrix.name }}.exe
+      run: go build -o ${{ matrix.name }}
       env:
         GOOS: ${{ matrix.os }}
         GOARCH: ${{ matrix.arch }}
